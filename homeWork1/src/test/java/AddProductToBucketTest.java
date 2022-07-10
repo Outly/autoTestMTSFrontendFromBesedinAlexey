@@ -25,7 +25,7 @@ public class AddProductToBucketTest {
     }
 
     @Test
-    public void checkingAddProductToBucket() {
+    public void checkingFindProduct() {
 
         String productName = "ФУТБОЛКА ПОЛО ЧЕРНАЯ (М)";
         String priceExpected = "2 800";
