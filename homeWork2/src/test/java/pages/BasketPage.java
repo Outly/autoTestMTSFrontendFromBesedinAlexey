@@ -19,51 +19,51 @@ public class BasketPage {
     private final By FINISH_BUTTON = By.xpath("//button[text()='ОФОРМИТЬ ЗАКАЗ']");
     private final By PHONE_MASSAGE = By.xpath("//p[@class='t-form__errorbox-item js-rule-error js-rule-error-phone'][@style]");
 
-    public BasketPage setNameField() {
-        $(NAME_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys("Тестов Тест Тестович");
+    public BasketPage setNameField(String buyerName) {
+        $(NAME_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys(buyerName);
         return this;
     }
 
-    public BasketPage setPhoneField() {
-        $(PHONE_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys("0000000000");
+    public BasketPage setPhoneField(String phone) {
+        $(PHONE_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys(phone);
         return this;
     }
 
-    public BasketPage setRegionField() {
-        $(REGION_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys("Камчатский край");
+    public BasketPage setRegionField(String region) {
+        $(REGION_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys(region);
         return this;
     }
 
-    public BasketPage setAddressField() {
-        $(ADDRESS_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys("Беринга 1");
+    public BasketPage setAddressField(String address) {
+        $(ADDRESS_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys(address);
         return this;
     }
 
-    public BasketPage setTownField() throws InterruptedException {
+    public BasketPage setTownField(String town) throws InterruptedException {
         $(TOWN_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5))
-                .sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE + "Петропавловск-Камчатский");
+                .sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE + town);
         Thread.sleep(500);
         $(TOWN_INPUT).sendKeys(Keys.TAB);
         return this;
     }
 
-    public BasketPage setAddresseeField() {
-        $(ADDRESSEE_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys("Тестов Тест Тестович");
+    public BasketPage setAddresseeField(String addressee) {
+        $(ADDRESSEE_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys(addressee);
         return this;
     }
 
-    public BasketPage setStreetField() {
-        $(STREET_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys("ул Беринга" + Keys.TAB);
+    public BasketPage setStreetField(String street) {
+        $(STREET_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys(street + Keys.TAB);
         return this;
     }
 
-    public BasketPage setHouseField() {
-        $(HOUSE_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys("д. 1" + Keys.TAB);
+    public BasketPage setHouseField(String house) {
+        $(HOUSE_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys(house + Keys.TAB);
         return this;
     }
 
-    public BasketPage setOfficeField() {
-        $(OFFICE_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys("1");
+    public BasketPage setOfficeField(String office) {
+        $(OFFICE_INPUT).shouldBe(Condition.visible, Duration.ofSeconds(5)).sendKeys(office);
         return this;
     }
 
@@ -72,7 +72,7 @@ public class BasketPage {
         return this;
     }
 
-    public BasketPage CheckMassage(String extendingMassage) {
+    public BasketPage checkMassage(String extendingMassage) {
         $(PHONE_MASSAGE).shouldBe(Condition.visible, Duration.ofSeconds(5)).shouldHave(Condition.text(extendingMassage));
         return this;
     }

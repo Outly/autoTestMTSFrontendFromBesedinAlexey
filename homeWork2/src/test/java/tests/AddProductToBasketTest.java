@@ -20,17 +20,17 @@ public class AddProductToBasketTest {
         productPage.addToBasketClick();
 
         BasketPage basketPage = new BasketPage();
-        basketPage.setNameField()
-                .setPhoneField()
-                .setRegionField()
-                .setAddressField()
-                .setTownField()
-                .setAddresseeField()
-                .setStreetField()
-                .setHouseField()
-                .setOfficeField()
+        basketPage.setNameField("Тестов Тест Тестович")
+                .setPhoneField("0000000000")
+                .setRegionField("Камчатский край")
+                .setAddressField("Беринга 1")
+                .setTownField("Петропавловск-Камчатский")
+                .setAddresseeField("Тестов Тест Тестович")
+                .setStreetField("ул Беринга")
+                .setHouseField("д. 1")
+                .setOfficeField("1")
                 .finishButtonClick()
-                .CheckMassage("Укажите, пожалуйста, корректный номер телефона");
+                .checkMassage("Укажите, пожалуйста, корректный номер телефона");
 
     }
 }
