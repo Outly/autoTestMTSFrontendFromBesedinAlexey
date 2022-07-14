@@ -1,27 +1,36 @@
 package tests;
 import org.junit.Test;
 import pages.BasketPage;
-import pages.BlackPoloMPage;
+import pages.ProductPage;
 import pages.HomePage;
 import pages.WearPage;
 
 public class AddProductToBasketTest {
 
     @Test
-    public void addProductToBasketAndFillingFields() {
+    public void addProductToBasketAndFillingFields() throws InterruptedException {
         HomePage homePage = new HomePage();
         homePage.openPage()
                 .clickGoToWear();
 
         WearPage wearPage = new WearPage();
-            wearPage.goToBlackPoloMClick();
+            wearPage.goToProduct("Футболка поло черная (м)");
 
-        BlackPoloMPage blackPoloMPage = new BlackPoloMPage();
-        blackPoloMPage.addToBasketClick();
+        ProductPage productPage = new ProductPage();
+        productPage.addToBasketClick();
 
         BasketPage basketPage = new BasketPage();
-        basketPage.fillingFields()
-                .PressFinishAndCheckMassage("Укажите, пожалуйста, корректный номер телефона");
+        basketPage.setNameField()
+                .setPhoneField()
+                .setRegionField()
+                .setAddressField()
+                .setTownField()
+                .setAddresseeField()
+                .setStreetField()
+                .setHouseField()
+                .setOfficeField()
+                .finishButtonClick()
+                .CheckMassage("Укажите, пожалуйста, корректный номер телефона");
 
     }
 }
