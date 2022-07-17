@@ -24,7 +24,7 @@ public class CheckOrderTest extends BaseTest{
         HomePage homePage = new HomePage();
         homePage.openPage()
                 .sendDestination(destinationTown)
-                .sendCheckInCheckOutDates(checkIn, "2022-08-08")
+                .sendCheckInCheckOutDates(checkIn, checkOut)
                 .sendGuestsAndRooms(adultCount, childrenCount, roomCount)
                 .searchBoxButtonClick();
 
