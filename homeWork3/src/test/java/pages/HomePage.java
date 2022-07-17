@@ -16,6 +16,7 @@ public class HomePage {
     private final By ROOM_ADD = By.xpath("//button[@data-bui-ref='input-stepper-add-button'][@aria-describedby='no_rooms_desc']");
     private final By SEARCH_BOX_BUTTON = By.cssSelector(".sb-searchbox__button ");
 
+    private final By RENT_CAR_BUTTON = By.cssSelector("[data-decider-header='bookinggo']");
 
     public HomePage openPage() {
         open(cfg.baseUrl());
@@ -51,6 +52,11 @@ public class HomePage {
 
     public HomePage searchBoxButtonClick() {
         $(SEARCH_BOX_BUTTON).click();
+        return this;
+    }
+
+    public HomePage goToRentCar() {
+        $(RENT_CAR_BUTTON).shouldBe(visible).click();
         return this;
     }
 
