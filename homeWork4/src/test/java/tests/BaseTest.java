@@ -9,26 +9,36 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class BaseTest {
 
     public static final ProjectConfig cfg = ConfigFactory.create(ProjectConfig.class);
 
     @Before
     public void setUp() {
-//        WebDriverManager.chromedriver().setup();
-//        Configuration.browser = "chrome";
-//        Configuration.driverManagerEnabled = true;
-//        Configuration.headless = false;
-//        Configuration.browserSize = "1920x1080";
-
-
+        WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
+        Configuration.driverManagerEnabled = true;
+        Configuration.headless = false;
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "http://172.17.220.30:4444/wd/hub";
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
+
+
+//        Configuration.browser = "chrome";
+//        Configuration.browserSize = "1920x1080";
+//        Configuration.remote = "http://172.17.213.90:4444/wd/hub";
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//
+//        capabilities.setCapability("enableVNC", true);
+//        capabilities.setCapability("enableVideo", true);
+//
+//        HashMap<String, Object> options = new HashMap<>();
+//        options.put("enableVNC", true);
+//        options.put("enableVideo", true);
+//        capabilities.setCapability("selenoid:options", options);
+//
+//        Configuration.browserCapabilities = capabilities;
 
     }
 
