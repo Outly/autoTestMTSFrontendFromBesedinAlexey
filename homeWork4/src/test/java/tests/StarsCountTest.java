@@ -26,6 +26,7 @@ public class StarsCountTest extends BaseTest {
 
         SearchResultPage searchResultPage = new SearchResultPage();
         searchResultPage.sendStatsFilter(starsCount)
+                        .loadingWait()
                         .checkStarsCount(starsCount);
 
     }

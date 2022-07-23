@@ -20,8 +20,12 @@ public class SearchResultPage {
         return this;
     }
 
-    public SearchResultPage checkStarsCount(int starsCount) {
+    public SearchResultPage loadingWait() {
         $(LOADING_WINDOW).shouldBe(visible).shouldBe(not(visible));
+        return this;
+    }
+
+    public SearchResultPage checkStarsCount(int starsCount) {
         $$(RATING_STARS_BOX).shouldBe(sizeGreaterThan(0)).stream()
                 .forEach(x -> x.$$("span").shouldBe(size(starsCount)));
         return this;
