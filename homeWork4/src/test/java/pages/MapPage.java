@@ -1,10 +1,6 @@
 package pages;
-
-import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
-
 import java.time.Duration;
-
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.*;
@@ -17,7 +13,6 @@ public class MapPage {
     private final By LEFT_FILTERS_CONTAINER = By.cssSelector(".map_left_filters__container");
     private final By RATING_STARS_BOX = By.cssSelector(".bui-rating.bui-rating--smaller");
     private final By MAP_LEFT_CARD_CONTAINER = By.cssSelector(".map_left_cards__container a");
-//    private final By MARKER_HOTELS = By.cssSelector(".svg-marker.svg-poi.atlas-marker.hotel.fading");
     private final By MARKER_HOTELS = By.cssSelector(".svg-marker.svg-poi.atlas-marker.hotel.fading:not([class*='soldout'])");
     private final By LOADING_MASSAGE = By.cssSelector(".map_left_cards__loading-spinner");
     private final By MAP_SIZE_DECREMENT = By.cssSelector(".map_atlas_custom_zoom_decrement.notranslate");
@@ -27,7 +22,6 @@ public class MapPage {
         $$(FILTERS_GROUP_CLASS).shouldHave(sizeGreaterThan(0))
                 .filterBy(attribute("data-filters-item", String.format("class:class=%s", "" + starsCount)))
                 .first().$(STARS_CHECK_BOX).scrollIntoView(true).click();
-        sleep(4000);
         return this;
     }
 
