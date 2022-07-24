@@ -6,7 +6,7 @@ import pages.SearchResultPage;
 public class StarsCountTest extends BaseTest {
 
     @Test
-    public void HotelStarsCountTest() {
+    public void hotelStarsCountTest() {
 
         String destinationTown = "Барселона";
         String checkIn = "2022-08-01";

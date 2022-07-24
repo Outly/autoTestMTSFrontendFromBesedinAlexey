@@ -5,17 +5,21 @@ import pages.HomePage;
 import pages.MapPage;
 import pages.SearchResultPage;
 
-public class StarsCountOnMapTest extends BaseTest{
-    @Test
-    public void hotelStarsCountOnMapTest() {
+import java.time.LocalDate;
 
-        String destinationTown = "Барселона";
-        String checkIn = "2022-08-01";
-        String checkOut = "2022-08-08";
+public class MapMarkerCountTest extends BaseTest{
+    @Test
+    public void mapMarkerCountTest() {
+
+        String destinationTown = "Мадрид";
+        int countOfNight = 7;
+        LocalDate dateStart = LocalDate.now();
+        LocalDate dateFinish = dateStart.plusDays(countOfNight);
+        String checkIn = dateStart.toString();
+        String checkOut = dateFinish.toString();
         int adultCount = 1;
         int childrenCount = 0;
         int roomCount = 1;
-
         int starsCount = 5;
 
         HomePage homePage = new HomePage();
@@ -29,8 +33,11 @@ public class StarsCountOnMapTest extends BaseTest{
         searchResultPage.mapClick();
 
         MapPage mapPage = new MapPage();
-        mapPage.sendStatsFilter(starsCount)
-                .checkStarsCount(starsCount);
+        mapPage.loadingMassageWait()
+                .checkLeftCardsContainersCountAndMarkerCount()
+                .mapSizeDecrement()
+                .loadingMassageWait()
+                .checkLeftCardsContainersCountAndMarkerCount();
 
     }
 }
