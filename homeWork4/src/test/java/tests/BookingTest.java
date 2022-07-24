@@ -8,16 +8,16 @@ import java.time.LocalDate;
 
 public class BookingTest extends BaseTest {
 
-    String destinationTown = "Барселона";
-    int countOfNight = 7;
-    LocalDate dateStart = LocalDate.now();
-    LocalDate dateFinish = dateStart.plusDays(countOfNight);
-    String checkIn = dateStart.toString();
-    String checkOut = dateFinish.toString();
-    int adultCount = 1;
-    int childrenCount = 0;
-    int roomCount = 1;
-    int starsCount = 5;
+    final String destinationTown = "Барселона";
+    final int countOfNight = 7;
+    final LocalDate dateStart = LocalDate.now();
+    final LocalDate dateFinish = dateStart.plusDays(countOfNight);
+    final String checkIn = dateStart.toString();
+    final String checkOut = dateFinish.toString();
+    final int adultCount = 1;
+    final int childrenCount = 0;
+    final int roomCount = 1;
+    final int starsCount = 5;
 
     @Before
     public void someName() {
