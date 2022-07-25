@@ -16,6 +16,8 @@ public class MapPage {
     private final By MARKER_HOTELS = By.cssSelector(".svg-marker.svg-poi.atlas-marker.hotel.fading:not([class*='soldout'])");
     private final By LOADING_MASSAGE = By.cssSelector(".map_left_cards__loading-spinner");
     private final By MAP_SIZE_DECREMENT = By.cssSelector(".map_atlas_custom_zoom_decrement.notranslate");
+    private final By MAP_CARD_TITLE = By.cssSelector(".map-card__title-link");
+    private final By ACTIVE_HOTEL_MARKER = By.cssSelector(".svg-marker.svg-poi.atlas-marker.hotel.active.fading.bounce");
 
     public MapPage sendStatsFilter(int starsCount) {
         $(LEFT_FILTERS_CONTAINER).shouldBe(visible).hover();
@@ -45,6 +47,16 @@ public class MapPage {
 
     public MapPage mapSizeDecrement() {
         $(MAP_SIZE_DECREMENT).shouldBe(visible).click();
+        return this;
+    }
+
+    public String getFirstHotelName() {
+        String hotelName = $$(MAP_CARD_TITLE).shouldBe(sizeGreaterThan(0)).first().hover().getText();
+        return hotelName;
+    }
+
+    public MapPage openProduct() {
+        $(ACTIVE_HOTEL_MARKER).shouldBe(visible).click();
         return this;
     }
 }

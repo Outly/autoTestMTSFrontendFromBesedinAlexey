@@ -3,8 +3,10 @@ import org.junit.Before;
 import org.junit.Test;
 import pages.HomePage;
 import pages.MapPage;
+import pages.ProductPage;
 import pages.SearchResultPage;
 import java.time.LocalDate;
+import static com.codeborne.selenide.Selenide.*;
 
 public class BookingTest extends BaseTest {
 
@@ -59,5 +61,21 @@ public class BookingTest extends BaseTest {
                 .mapSizeDecrement()
                 .loadingMassageWait()
                 .checkLeftCardsContainersCountAndMarkerCount();
+    }
+
+    @Test
+    public void hotelNameTest() {
+        SearchResultPage searchResultPage = new SearchResultPage();
+        searchResultPage.mapClick();
+
+        MapPage mapPage = new MapPage();
+        String hotelName = mapPage.loadingMassageWait()
+                                  .getFirstHotelName();
+                           mapPage.openProduct();
+
+        switchTo().window(1);
+
+        ProductPage productPage = new ProductPage();
+        productPage.checkHotelName(hotelName);
     }
 }
