@@ -1,0 +1,7 @@
+pages\SearchResultPage.class
+pages\ProductPage.class
+config\ProjectConfig.class
+pages\HomePage.class
+tests\BookingTest.class
+tests\BaseTest.class
+pages\MapPage.class
