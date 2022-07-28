@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -17,6 +18,7 @@ public class HomePage {
     private final By ACTIVE_BANNER = By.cssSelector("[class='promo-cover__item js__promo-content-item slick-slide promo-cover__item_dark slick-current slick-active']");
     private final By SPINNER = By.cssSelector("circle");
 
+    @Step("Открыть домашнюю страницу")
     public HomePage openPage() {
         open(cfg.baseUrl());
         return this;
@@ -28,6 +30,7 @@ public class HomePage {
         return this;
     }
 
+    @Step("Проверить, что баннеры сменяют друг друга")
     public HomePage carouselCheck() {
         int bannerCount = $$(PROMO_WRAPPER).shouldBe(sizeGreaterThan(0)).size();
         String hrefActiveBanner = $(ACTIVE_BANNER).shouldBe(exist, Duration.ofSeconds(15)).getAttribute("href");

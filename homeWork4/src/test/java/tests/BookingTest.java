@@ -39,7 +39,7 @@ public class BookingTest extends BaseTest {
                         .checkStarsCount(starsCount);
     }
 
-    //@Test
+    @Test
     public void hotelStarsCountOnMapTest() {
         SearchResultPage searchResultPage = new SearchResultPage();
         searchResultPage.mapClick();
@@ -50,7 +50,7 @@ public class BookingTest extends BaseTest {
                 .checkStarsCount(starsCount);
     }
 
-    //@Test
+    @Test
     public void mapMarkerCountTest() {
         SearchResultPage searchResultPage = new SearchResultPage();
         searchResultPage.mapClick();
@@ -63,7 +63,7 @@ public class BookingTest extends BaseTest {
                 .checkLeftCardsContainersCountAndMarkerCount();
     }
 
-    //@Test
+    @Test
     public void hotelNameTest() {
         SearchResultPage searchResultPage = new SearchResultPage();
         searchResultPage.mapClick();

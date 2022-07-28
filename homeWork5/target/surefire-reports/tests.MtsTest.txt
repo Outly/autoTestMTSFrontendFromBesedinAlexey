@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: tests.BookingTest
+Test set: tests.MtsTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.052 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 97.873 s - in tests.MtsTest
