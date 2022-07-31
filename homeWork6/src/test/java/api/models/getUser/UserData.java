@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Data {
+public class UserData {
 
     @JsonProperty("id")
     private Integer id;
@@ -37,6 +37,6 @@ public class Data {
         return avatar;
     }
 
-    public Data() {
+    public UserData() {
     }
 }

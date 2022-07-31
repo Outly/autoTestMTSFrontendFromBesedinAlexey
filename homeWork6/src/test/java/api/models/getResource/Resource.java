@@ -1,17 +1,17 @@
-
-package api.models.getUser;
+package api.models.getResource;
+import api.models.getUser.Support;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class User {
+public class Resource {
 
     @JsonProperty("data")
-    private UserData data;
+    private ResourceData data;
     @JsonProperty("support")
     private Support support;
 
-    public UserData getData() {
+    public ResourceData getData() {
         return data;
     }
 
@@ -19,6 +19,6 @@ public class User {
         return support;
     }
 
-    public User() {
+    public Resource() {
     }
 }

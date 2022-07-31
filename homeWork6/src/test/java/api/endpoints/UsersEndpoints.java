@@ -2,7 +2,9 @@ package api.endpoints;
 
 public enum UsersEndpoints {
     USER("/users/%s"),
-    USERS("/users");
+    USERS("/users"),
+    RESOURCE("/unknown/%s"),
+    RESOURCES("/unknown");
 
     private String url;
 
