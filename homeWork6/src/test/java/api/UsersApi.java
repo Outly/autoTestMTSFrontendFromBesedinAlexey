@@ -99,4 +99,13 @@ public class UsersApi {
                 .as(UpdateUserData.class);
     }
 
+    public static void deleteUserSuccess(int userId) {
+        given()
+                .spec(getRequestSpec())
+                .when()
+                .delete(String.format(USER.getUrl(), userId))
+                .then()
+                .spec(getResponseSpec(SC_NO_CONTENT));
+    }
+
 }

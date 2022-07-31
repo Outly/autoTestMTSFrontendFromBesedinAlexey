@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpdateUserData {
     @JsonProperty("name")
-    public String name;
+    private String name;
     @JsonProperty("job")
-    public String job;
+    private String job;
     @JsonProperty("updatedAt")
-    public String updatedAt;
+    private String updatedAt;
 
     public String getName() {
         return name;

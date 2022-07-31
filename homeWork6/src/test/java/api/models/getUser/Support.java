@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Support {
 
     @JsonProperty("url")
-    public String url;
+    private String url;
     @JsonProperty("text")
-    public String text;
+    private String text;
 
     public String getUrl() {
         return url;
