@@ -5,8 +5,7 @@ import api.models.getUser.User;
 import api.models.getUser.Users;
 import api.models.updateUser.UpdateUserData;
 
-import static api.endpoints.UsersEndpoints.USER;
-import static api.endpoints.UsersEndpoints.USERS;
+import static api.endpoints.UsersEndpoints.*;
 import static api.models.SpecHelper.getRequestSpec;
 import static api.models.SpecHelper.getResponseSpec;
 import static io.restassured.RestAssured.given;
@@ -108,4 +107,14 @@ public class UsersApi {
                 .spec(getResponseSpec(SC_NO_CONTENT));
     }
 
+    public static User getUserWithDelaySuccess(int userId, int delay) {
+        return given()
+                .spec(getRequestSpec())
+                .when()
+                .get(String.format(USER.getUrl() + DELAY.getUrl(), userId, delay))
+                .then()
+                .spec(getResponseSpec(SC_OK))
+                .extract()
+                .as(User.class);
+    }
 }

@@ -6,7 +6,8 @@ public enum UsersEndpoints {
     RESOURCE("/unknown/%s"),
     RESOURCES("/unknown"),
     REGISTER("/register"),
-    LOGIN("/login");
+    LOGIN("/login"),
+    DELAY("?delay=%s");
 
     private String url;
 
