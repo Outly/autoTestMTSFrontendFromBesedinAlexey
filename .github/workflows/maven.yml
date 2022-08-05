@@ -1,0 +1,11 @@
+name: Run UI and API tests
+
+on:
+  push
+  
+jobs:
+  install_dependency:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo "Hello, world!"
