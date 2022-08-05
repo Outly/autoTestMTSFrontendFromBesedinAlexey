@@ -8,4 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: echo "Hello, world!"
+    - name: "step 1"
+      run: ls -la
+  
+  run_test:
+    runs-on: ubuntu-latest
+    needs: install_dependency
+    steps:
+    - name: "step 2"
+      run: echo "Echo 2"
