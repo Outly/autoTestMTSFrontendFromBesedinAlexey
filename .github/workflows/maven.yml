@@ -8,13 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: "step 1"
+    
+    - name: "Скачиваем selenoid"
+      run: curl -s https://aerocube.com/cm/bash  | bash
+    - name: "Даём права на запуск selenoid"
+      run: chmod +x ./cm
+    - name: "Запускаем selenoid"
+      run: ./cm selenoid start --vnc
+    - name: "Запускаем selenoid-ui"
+      run: ./cm selenoid-ui start
+    - name: "Используем main репозиторий"
       uses: actions/checkout@v1
-    - run: ls -la
-  
-  run_test:
-    runs-on: ubuntu-latest
-    needs: install_dependency
-    steps:
-    - name: "step 2"
-      run: echo "Echo 2"
+    - run: cd homeWork7
+    - name: "Запускаем тесты"
+      run: mvn clean test
